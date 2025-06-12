@@ -23,7 +23,7 @@ namespace ScheduleApp.Services
             _settingsService = settingsService;
             _pathProvider = pathProvider;
 
-            _settingsService.GetLastUsedDbPath();
+            _dbPath = _settingsService.GetLastUsedDbPath();
             if (String.IsNullOrEmpty(_dbPath))
             {
                 _dbPath = _pathProvider.SelectDatabasePath("Выберите файл базы данных");
